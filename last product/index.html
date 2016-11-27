@@ -1,0 +1,615 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+body{
+	overflow: hidden;
+    background:#73aefd;
+   /* background-image: linear-gradient(#5665d4,#4dbaa9)*/
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+
+}
+input{
+	margin:0;
+	padding:0;
+	border:none;
+	outline: none;
+}
+
+.bgball{
+	background: #45b8ee;
+	opacity: 1;
+	border-radius: 50%;
+	position: absolute;
+	left:30px;
+	top:30px;
+	z-index: 100;
+
+}
+#imgs img{
+	width:20px;
+	height:20px;
+	position: absolute;
+    top:-20px;
+    opacity: 1;
+}
+#imgs .small{
+	width:10px;
+	height:10px;
+	position: absolute;
+
+}
+#imgs .smallM{
+	width:15px;
+	height:15px;
+	position: absolute;
+
+}
+#imgs .smallB{
+     width:20px;
+     height:20px;
+     position: absolute;
+
+}
+#sun img {
+  width: 100px;
+  height: 100px;
+}
+#div1{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     left:-120px;
+     border-radius: 50%;
+}
+#div2{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     right:-120px;
+     border-radius: 50%;
+}
+#div3{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     left:-120px;
+     border-radius: 50%;
+}
+#div4{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     right:-120px;
+     border-radius: 50%;
+}
+#div5{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     left:-120px;
+     border-radius: 50%;
+}
+#div6{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     right:-120px;
+     border-radius: 50%;
+}
+#div7{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     left:-120px;
+     border-radius: 50%;
+}
+#div8{
+     width:100px;
+     height:100px;
+     background: #fff;
+     position: absolute;
+     top:100px;
+     right:-120px;
+     border-radius: 50%;
+}
+#sun img{
+	opacity: 0;
+	position: absolute;
+	right:100px;
+	top:50px;
+}
+.imgP{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+  background: #5191e6;
+}
+#index{
+	width:600px;
+	margin:200px auto;
+	background: #ebd39a;
+	font:15px/25px "宋体";
+	color:#fff;
+	display:none;
+}
+#index li{
+	position: relative;
+  border-bottom: 1px solid #fff;
+}
+.title{
+	font:20px/50px "Arial";
+	text-indent:1em;
+}
+.content{
+	text-indent:2em;
+	padding:1em 2em 1em 2em;
+	font:15px/30px "宋体";
+	display: none;
+}
+#index .active{
+	background: orange;
+}
+#index .btn{
+	position: absolute;
+	right:30px;
+	bottom: 15px;
+	background: #f1c459;
+	width:60px;
+	height:20px;
+}
+#index .btn:hover{
+	background: #f5a30c;
+}
+/*----------------------Mr.Z*/
+#star {
+  width: 600px;
+  height: 3px;
+  border: 1px solid #535353;
+  margin: 0 auto;
+  margin-top: 300px;
+  position: relative;
+}
+#loading {
+  width: 0px;
+  height: 3px;
+  background: #535353;
+}
+#loaddrgon {
+  position: absolute;
+  top: -43px;
+  left: -25px;
+}
+#loading img {
+  width: 40px;
+  height: 43px;
+}
+#zbtn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #b4b1aa;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 20;
+}
+#zbtn span {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  border: 1px solid #b4b1aa;
+  float: left;
+  font: 15px/15px "宋体";
+  margin-top: 5px;
+  margin-left: 2px;
+  text-align: center;
+}
+#MrZ {
+    display: none;
+}
+</style>
+</head>
+<body>
+<!-- <div id="zbtn">
+    <span>1</span>
+    <span>2</span><br/>
+    <span>3</span>
+    <span>4</span>
+</div> -->
+<div id="Sf">
+    <section id="imgs"></section>
+    <div id="eight">
+    	<div id="div1"></div>
+    	<div id="div2"></div>
+    	<div id="div3"></div>
+    	<div id="div4"></div>
+    	<div id="div5"></div>
+    	<div id="div6"></div>
+    	<div id="div7"></div>
+    	<div id="div8"></div>
+    </div>
+
+    <div id="sun">
+    	<img src="sun2.png" id="sun2">
+    </div>
+
+    <div id="star">
+         <div id="loading">
+              <img src="imgs/drgon1.png" id="loaddrgon"/>
+         </div>
+    </div>
+    <ul id="index">
+    	<li>
+    		<div class="title">section1</div>
+    		<div class="content">
+    		我们是共产主义接班人，有着光荣的革命传统，爱祖国爱人民，鲜艳的红领巾飘扬在胸前,顽强学习，坚决斗争，向着胜利，勇敢前进
+    			<input type="button" value="enter" class="btn">
+    		</div>
+    	</li>
+    	<li>
+    		<div class="title">section2</div>
+    		<div class="content">
+    		我们是共产主义接班人，有着光荣的革命传统，爱祖国爱人民，鲜艳的红领巾飘扬在胸前,顽强学习，坚决斗争，向着胜利，勇敢前进
+    		<input type="button" value="enter" class="btn">
+    		</div>
+    	</li>
+      <li>
+        <div class="title">section3</div>
+        <div class="content">
+        我们是共产主义接班人，有着光荣的革命传统，爱祖国爱人民，鲜艳的红领巾飘扬在胸前,顽强学习，坚决斗争，向着胜利，勇敢前进
+        <input type="button" value="enter" class="btn">
+        </div>
+      </li>
+    </ul>
+</div>
+<script src="miaov.js"></script>
+<script>
+         var d=0
+          var timeF1=0
+          var sec=document.getElementById('imgs');
+          var sun2=document.getElementById('sun2');
+          var imgs=sec.getElementsByTagName('img');
+          var divs = document.getElementById('eight');
+         
+
+          create()
+          function create(){
+               for(var i=0;i<100;i++){
+                    var img = document.createElement("img")
+                    img.src="xue.png"
+                    var m = Math.random()*window.innerWidth
+                    img.style.left=m+"px"
+                    
+                    img.className="small"
+                    sec.appendChild(img)
+
+               }
+               for(var i=0;i<100;i++){
+                    var img = document.createElement("img")
+                    img.src="xue.png"
+                    var m = Math.random()*window.innerWidth
+                    img.style.left=m+"px"
+                    
+                    img.className="smallM"
+                   	sec.appendChild(img)
+
+               }
+               for(var i=0;i<100;i++){
+                    var img = document.createElement("img")
+                    img.src="xue.png"
+                    var m = Math.random()*window.innerWidth
+                    img.style.left=m+"px"
+                    
+                    img.className="smallB"
+                    sec.appendChild(img)
+
+               }
+          }
+          re()
+          function re(){
+               var i=0 
+               timeF1=setInterval(function(){    
+               var ran =Math.floor(Math.random()*imgs.length)       
+                    mTween(imgs[ran],{top:1100},6000,"linear",function(){
+                     imgs[ran].style.top=-20+"px"                                         
+                   }) 
+                                                 
+               },20)
+                         
+          }
+          var div1=document.getElementById('div1')
+          var div2=document.getElementById('div2')
+          var div3=document.getElementById('div3')
+          var div4=document.getElementById('div4')
+          var div5=document.getElementById('div5')
+          var div6=document.getElementById('div6')
+          var div7=document.getElementById('div7')
+          var div8=document.getElementById('div8')    
+          setTimeout(function(){
+                mTween(div1,{left:100,top:500},2000,"bounceOut")
+                mTween(div2,{right:100,top:500},2000,"bounceOut")
+                mTween(div3,{left:250,top:500},2000,"bounceOut")
+                mTween(div4,{right:250,top:500},2000,"bounceOut")
+                mTween(div5,{left:400,top:500},2000,"bounceOut")
+                mTween(div6,{right:400,top:500},2000,"bounceOut")
+                mTween(div7,{left:550,top:500},2000,"bounceOut")
+                mTween(div8,{right:550,top:500},2000,"bounceOut")
+
+                setTimeout(function(){
+
+                	mTween(sun2,{opacity:100},4000,"linear",function(){
+                		 var sT=1
+                		setInterval(function(){
+                			if(sT==1){
+                				sun2.src="sun1.png"
+                				sT=2
+                			}else{
+                				sun2.src="sun2.png"
+                				sT=1
+                			}
+                			
+                		},800)
+                		move()
+                	})
+
+                	mTween(sec,{opacity:0},4000,"linear",function(){
+                		clearInterval(timeF1)
+                		sec.style.display="none"
+
+                	})
+
+                	
+                },2000)
+
+          },5000)
+         
+          function move(){
+          		mTween(div1,{top:200},500,"easeOut",function(){         		
+          			mTween(div1,{top:500},500,"bounceOut",function(){
+          				var imgP=document.createElement("img")
+          					imgP.src="imgs/studio_0001.jpg"
+          					imgP.className="imgP"
+          				div1.appendChild(imgP)
+          				fndiv3()	
+          			})
+          		})
+          		mTween(div2,{top:200},500,"easeOut",function(){         		
+          			mTween(div2,{top:500},500,"bounceOut",function(){
+          				var imgP=document.createElement("img")
+          					imgP.src="imgs/studio_0002.jpg"
+          					imgP.className="imgP"
+          				div2.appendChild(imgP)
+          				fndiv4()	
+          			})
+          		})
+
+		function fndiv3(){
+			mTween(div3,{top:100,left:860},1000,"easeInStrong",function(){         	
+	  			mTween(div3,{top:500,left:250},1000,"bounceOut",function(){
+	  				var imgP=document.createElement("img")
+	  					imgP.src="imgs/studio_0003.jpg"
+	  					imgP.className="imgP"
+	  				div3.appendChild(imgP)	
+	  			})
+			})
+		}
+        function fndiv4(){
+			mTween(div4,{top:100,right:860},1000,"easeInStrong",function(){         		
+          		mTween(div4,{right:250,top:500},1000,"bounceOut",function(){
+          				var imgP=document.createElement("img")
+          					imgP.src="imgs/studio_0004.jpg"
+          					imgP.className="imgP"
+          				div4.appendChild(imgP)
+          				other()	
+          		})
+          	})
+		}  		
+ var body = document.body;       
+		function other(){
+			mTween(div5,{top:300},200,"linear",function(){
+				mTween(div5,{top:500},200,"linear",function(){
+					var imgP=document.createElement("img")
+	  					imgP.src="imgs/studio_0005.jpg"
+	  					imgP.className="imgP"
+	  					div5.appendChild(imgP)
+					mTween(div6,{top:300},200,"linear",function(){
+						mTween(div6,{top:500},200,"linear",function(){
+							var imgP=document.createElement("img")
+	  						imgP.src="imgs/studio_0006.jpg"
+	  						imgP.className="imgP"
+	  						div6.appendChild(imgP)
+							mTween(div7,{top:300},200,"linear",function(){
+								mTween(div7,{top:500},200,"linear",function(){
+									var imgP=document.createElement("img")
+	  								imgP.src="imgs/studio_0007.jpg"
+	  								imgP.className="imgP"
+	  								div7.appendChild(imgP)
+									mTween(div8,{top:300},200,"linear",function(){
+										mTween(div8,{top:500},200,"linear",function(){
+											var imgP=document.createElement("img")
+	  										imgP.src="imgs/studio_0008.jpg"
+	  										imgP.className="imgP"
+	  										div8.appendChild(imgP)
+	  										sun2.style.display="none"
+                                             body.style.background = "#ddd6c6"
+                        // ----------------------------------------------------------------
+	  										list()
+										})
+									})
+								})
+							})
+						})
+					})
+				})
+			})
+		}
+    }
+    
+    function list(){
+    	var ul = document.getElementById("index");
+    	var lis = ul.children;
+    	var btns = ul.getElementsByTagName("input")
+    	ul.style.display="block"
+    	var sfnum = 0
+    	for(var i=0;i<lis.length;i++){
+    		lis[i].index=i
+    		lis[i].onclick=function(){
+    			if(this.children[1].style.display=="block"){
+    				this.className=""
+    				this.children[1].style.display="none"
+    			}else{
+    				lis[sfnum].className=""
+    				lis[sfnum].children[1].style.display="none"
+    				this.className="active"
+    				this.children[1].style.display="block"
+    				sfnum=this.index
+    			}		
+    		}
+        btns[i].in=i
+        btns[i].onclick=function(){
+            if(this.in==0){
+              ballsf()
+              setTimeout(function(){
+              	window.open("图片特效.html","_self")
+              },6000)
+              
+
+            }
+            if(this.in == 1) {
+              ballsf()
+              setTimeout(function(){
+              	window.open("作品.html","_self")
+              },6000)
+              
+            }
+            if(this.in == 2) {
+              ballsf()
+              setTimeout(function(){
+              	window.open("111.html","_self")
+              },6000)
+              
+            }
+        }
+
+
+    	}
+    }
+
+function ballsf(){
+ 	var numsf1=0
+ 	var timesf1=0
+ 	var timesf2=0
+ 	var div=document.createElement("div")
+ 	div.className="bgball"
+ 	document.body.appendChild(div)
+
+ 	timesf1=setInterval(function(){
+ 		numsf1++
+ 		div.style.width=10*numsf1+"px"
+ 		div.style.height=10*numsf1+"px"
+ 		div.style.left=(-2*numsf1)+"px"
+ 		div.style.top=(-2*numsf1)+"px"
+ 	},20)
+
+ 	
+ 	setTimeout(function(){
+ 		clearInterval(timesf1)
+
+ 		timesf2=setInterval(function(){
+ 		
+   		div.style.width=div.offsetWidth-10+"px"
+   		div.style.height=div.offsetHeight-10+"px"
+   		if(div.offsetWidth==0){
+   			  clearTimeout(timesf2)
+   		} 
+ 		},20)
+ 	},6000)
+ 	
+ }
+//----------------------------Mr.Z 
+var star = document.getElementById('star');
+var loading = document.getElementById('loading');
+var loaddrgon = document.getElementById('loaddrgon');
+var timer1 = 0;
+var timer2 = 0;
+var arr = ["imgs/drgon2.png","imgs/drgon1.png"];
+var tab = true;
+timer1 = setTimeout(function() {
+     clearTimeout(timer1);
+    timer2 = setInterval(function() {
+        if(loading.style.width == 600 + "px") {
+            clearInterval(timer2);
+    }
+    if(tab == true ) {
+        loaddrgon.src =  arr[0];
+    }else {
+        loaddrgon.src =  arr[1];
+    }
+    tab = !tab;
+},100)
+mTween(loading,{width: 600},4000,"linear");
+mTween(loaddrgon,{left: 575},4000,"linear",
+function() {star.style.display = "none";});
+},1000); 
+// ---------------------------------------------------------------------change Mr.Z
+// var zbtn = document.getElementById('zbtn');
+// var zspan = zbtn.getElementsByTagName('span');
+// var Mrz = document.getElementById('MrZ');
+// var Sf = document.getElementById('Sf');
+// zbtn.onmouseover = function() {
+//     mTween(zbtn,{left: 650,top: 310,opacity: 70},200,"linear")
+//     css3d(zbtn,"scaleX",25)
+//     css3d(zbtn,"scaleY",12.5)
+//     zbtn.style.background = "#9c9384";
+//     zbtn.style.opacity = 0;
+// }
+// zbtn.onmouseout = function() {
+//     zbtnchange();
+// }
+// function zbtnchange() {
+//     css3d(zbtn,"scaleX",1)
+//     css3d(zbtn,"scaleY",1)
+//     zbtn.style.opacity = 0;
+//     mTween(zbtn,{left: 10,top: 10,opacity: 100},200,"linear")
+//     zbtn.style.background = "";
+// }
+// for(var i = 0; i < zspan.length; i++) {
+//     zspan[i].onclick = function() {
+//         zbtnchange();
+//     }
+//     zspan[i].onmouseover = function() {
+//         for(var i = 0; i < zspan.length; i++) {
+//             zspan[i].style.background = "";
+//         }
+//         this.style.background = "#d7d4ce"
+//     }
+// } 
+// zspan[0].onclick = function() {
+//     zbtnchange();
+//     Mrz.style.display = "block";
+//     Sf.style.display = "none";
+// }
+// ---------------------------------------------------------------Mr.Z
+</script>
+</body>
+</html>

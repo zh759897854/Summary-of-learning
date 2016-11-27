@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				background: #0E0E0E;
+				overflow: hidden;
+			}
+			
+			#tiao {
+				width: 1300px;
+				height: 15px;
+				position: absolute;
+				left: 33px;
+				top: -15px;
+				background: url(images/shelf.jpg) no-repeat;
+				z-index:600;
+			}
+			
+			.line {
+				width: 3px;
+				height: 80px;
+				background: #8B0000;
+				position: absolute;
+				left: 40px;
+				top: 15px;
+				z-index:600;
+			}
+			
+			.bell {
+				width: 40px;
+				height: 40px;
+				background: url(images/ling.png) no-repeat;
+				position: absolute;
+				left: 21px;
+				top: 95px;
+				z-index:600;
+			}
+			/*以下是图片的样式*/
+			
+			#div1 {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 1;
+			}
+			
+			#div1 div {
+				position: absolute;
+				-webkit-transition: 1.5s all ease-in-out;
+				-moz-transition: 1.5s all ease-in-out;
+				-ms-transition: 1.5s all ease-in-out;
+				-o-transition: 1.5s all ease-in-out;
+				border: 6px solid white;
+				box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+				/*left: 0;*/
+				top: -300px;
+				cursor: pointer;
+			}
+			
+			#div1 div span {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				-webkit-transition: 1.5s opacity ease-in-out;
+				-moz-transition: 1.5s opacity ease-in-out;
+				-ms-transition: 1.5s opacity ease-in-out;
+			}
+			
+			#div1 .active {
+				border: 1px solid white;
+				box-shadow: 0px 0px 2px black;
+			}
+			
+			#prev,
+			#next {
+				position: absolute;
+				width: 60px;
+				height: 60px;
+				top: 50%;
+				margin-top: -30px;
+				border: 1px solid #999;
+				box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+				z-index: 2;
+				-webkit-transition: 0.7s all ease;
+				opacity: 0.6;
+				-moz-transition: 0.7s all ease;
+				opacity: 0.6;
+				-ms-transition: 0.7s all ease;
+				opacity: 0.6;
+			}
+			
+			#prev {
+				left: -20px;
+				background: url(images/prev.png) center no-repeat white;
+				border-radius: 0 8px 8px 0;
+				display: none;
+			}
+			
+			#prev:hover {
+				left: 0;
+				opacity: 1;
+			}
+			
+			#next {
+				right: -20px;
+				background: url(images/next.png) center no-repeat white;
+				border-radius: 8px 0 0 8px;
+				display: none;
+			}
+			
+			#next:hover {
+				right: 0;
+				opacity: 1;
+			}
+			
+			.back {
+				position: absolute;
+				right: 20px;
+				top: 10px;
+				color: #000;
+				text-shadow: 1px 1px 3px #999999;
+				text-decoration: none;
+				z-index: 500;
+			}
+			
+			#imgs img{
+				width:20px;
+				height:20px;
+				position: absolute;
+			    top:-20px;
+			    opacity: 1;
+			    /*z-index:700;*/
+			}
+			#imgs .small{
+				width:10px;
+				height:10px;
+				position: absolute;
+			
+			}
+			#imgs .smallM{
+				width:15px;
+				height:15px;
+				position: absolute;
+			
+			}
+			#imgs .smallB{
+			     width:20px;
+			     height:20px;
+			     position: absolute;
+			
+			}
+			#nav {
+				width: 80px;
+				height: 131px;
+				position: absolute;
+				z-index: 20;
+				left: -82px;
+				top: 30%;
+				border : 1px solid #f3f3f3;
+				border-top: none;
+				border-bottom: none;
+			}
+			#nav ul {
+				padding: 0;
+				margin: 0;
+			}
+			#nav li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				height: 30px;
+				border : 1px solid #f3f3f3;
+				margin-bottom: 1px;
+				border-left: none;
+				border-right: none;
+				text-align: center;
+			}
+			#nav a {
+				font: 15px/30px "Arial";
+				text-decoration: none;
+				color: #fff;
+			}
+			#decoration  {
+				position: absolute;
+				left: 81px;
+				top: 27%;
+				border: 25px solid #ddd6c6;
+				border-top-color : #0E0E0E;
+				border-right-color : #0E0E0E;
+				border-bottom-color : #0E0E0E;
+				background: #000;
+				z-index: 10;
+			}
+			.bgball{
+				width:150%;
+				height:150%;
+				background: #45b8ee;
+				opacity: 1;
+				border-radius: 50%;
+				position: absolute;
+				left:-430px;
+				top:-230px;
+				z-index: 601;
+
+			}
+		</style>
+		<script src="js/miaov.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="imgs"></div>
+			<div id="tiao">
+				<span class="line"></span>
+				<i class="bell"></i>
+			</div>
+			<a href="javascript:;" id="prev"></a>
+			<a href="javascript:;" id="next"></a>
+			<div id="div1"></div>
+		</div>
+		<div class="bgball"></div>
+		<div id="nav">
+			<ul>
+				<li><a href="javascript:;">首页</a></li>
+				<li><a href="javascript:;">Section1</a></li>
+				<li><a href="javascript:;">Section2</a></li>
+				<li><a href="javascript:;">Section3</a></li>
+			</ul>
+	<div id="decoration"></div>
+</div>
+	</body>
+	<script src="js/index.js"></script>
+	<script>
+		var timesf2=0
+		var ball = document.querySelector(".bgball")
+		timesf2=setInterval(function(){		
+	 		ball.style.width=ball.offsetWidth-10+"px"
+	 		ball.style.height=ball.offsetHeight-5+"px"
+	 		if(ball.offsetWidth==0){
+	 			clearTimeout(timesf2)
+	 		} 
+ 		},20)
+
+ 		var decoration = document.getElementById('decoration');
+		var nav = document.getElementById('nav');
+		var zlis = nav.getElementsByTagName('li');
+		zlis[1].style.background = "#ae9c85";
+		for(var i = 0; i < zlis.length; i++){
+			zlis[i].index = i;
+			zlis[i].onmouseover = function() {
+				if(this.index == 2) {
+					for(var i = 0; i < zlis.length; i++){
+						zlis[i].style.background = "";
+					}
+					zlis[2].style.background = "#ae9c85";
+				}else {
+					for(var i = 0; i < zlis.length; i++){
+						zlis[i].style.background = "";
+					}
+					zlis[2].style.background = "#ae9c85";
+					this.style.background = "#ddd6c6";
+				}
+			}
+		}
+		nav.onmouseover = function() {
+			mTween(nav,{left: 0},200,"linear");
+			nav.onmouseout = function() {
+				mTween(nav,{left: -82},200,"linear")
+			}
+		}
+		for(var i = 0; i < zlis.length; i++) {
+			zlis[i].index = i;
+			zlis[i].onclick = function() {
+				if(this.index == 0) {
+				  ballsf()
+		          setTimeout(function(){
+		          	window.open("index.html","_self");
+		          },6000)
+					
+				}
+				if(this.index == 1) {
+					ballsf()
+		          	setTimeout(function(){
+		          		window.open("图片特效.html","_self");
+		          	},6000)
+					
+				}
+			}
+		}
+		function ballsf(){
+		 	var timesf1=0
+		 	var numsf1=1
+			var ball = document.querySelector(".bgball")
+
+		 	timesf1=setInterval(function(){
+		 		numsf1++
+		 		ball.style.width=10*numsf1+"px"
+		 		ball.style.height=10*numsf1+"px"
+		 		
+		 	},20)
+			
+		 }
+	</script>
+</html>

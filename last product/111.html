@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+body {
+	overflow:hidden;
+}
+html{
+	height:100%;
+	background:#000;
+}
+.wrap{	
+	height:240px;
+	margin: 160px 370px;
+	position: relative;
+	
+}
+
+.bigS,.hover{
+	width: 240px;
+	height: 240px;
+	margin:100px;	
+	transform-style: preserve-3d;
+	transform: rotateX(-30deg) rotateY(-80deg);
+	animation: rotate 3s infinite linear;	
+}
+
+
+@keyframes rotate{
+	from{transform: rotateX(0deg) rotateY(0deg);}
+	to{transform: rotateX(360deg) rotateY(360deg);}
+}
+
+/*大正方样式*/
+.bigS .big,.hover .big{	
+	position:absolute;
+	width:240px;
+	height:240px;
+	opacity: .8;
+	transition:.4s;
+	
+}
+
+.active .big{
+	float: left;
+	padding:10px;
+	margin:10px;
+	background: #fff;
+	text-align: center;
+	border-radius: 10%;
+	transition: 1s;
+	
+}
+
+.bigS .big img,.hover .big img{
+	width:240px;
+	height:240px;
+}
+.active{
+	width: 1000px;	
+	margin:70px 0 0 250px;
+
+}
+
+.active .big img{
+	border-radius: 5%;
+	
+}
+.bigS .big:nth-of-type(1){
+	transform: rotateY(0deg) translateZ(120px);
+}
+.bigS .big:nth-of-type(2){
+	transform: translateZ(-120px) rotateY(180deg);
+}
+.bigS .big:nth-of-type(3){
+	transform: rotateY(90deg) translateZ(120px);
+}
+.bigS .big:nth-of-type(4){
+	transform: rotateY(-90deg) translateZ(120px);
+}
+.bigS .big:nth-of-type(5){
+	transform: rotateX(-90deg) translateZ(120px);
+}
+.bigS .big:nth-of-type(6){
+	transform: rotateX(90deg) translateZ(120px);
+}
+
+
+
+/*鼠标移入效果*/
+
+.hover .big:nth-of-type(1){
+	transform: rotateY(0deg) translateZ(160px);
+}
+.hover .big:nth-of-type(2){
+	transform: translateZ(-160px) rotateY(180deg);
+}
+.hover .big:nth-of-type(3){
+	transform: rotateY(90deg) translateZ(160px);
+}
+.hover .big:nth-of-type(4){
+	transform: rotateY(-90deg) translateZ(160px);
+}
+.hover .big:nth-of-type(5){
+	transform: rotateX(-90deg) translateZ(160px);
+}
+.hover .big:nth-of-type(6){
+	transform: rotateX(90deg) translateZ(160px);
+}
+
+
+
+/*小正方体样式*/
+.samll{
+	width: 240px;
+	height: 240px;
+	transform-style: preserve-3d;
+	transform: rotateX(-30deg) rotateY(-80deg);
+	animation: rotate 5s infinite linear;
+}
+.samll span{
+	position:absolute;
+	width:120px;
+	height:120px;
+	left:60px;
+	top:60px;	
+}
+.samll span img{
+	width:120px;
+	height:120px;
+}
+.samll span:nth-of-type(1){
+	transform: rotateY(0deg) translateZ(60px);
+}
+.samll span:nth-of-type(2){
+	transform: translateZ(-60px) rotateY(180deg);
+}
+.samll span:nth-of-type(3){
+	transform: rotateY(90deg) translateZ(60px);
+}
+.samll span:nth-of-type(4){
+	transform: rotateY(-90deg) translateZ(60px);
+}
+.samll span:nth-of-type(5){
+	transform: rotateX(-90deg) translateZ(60px);
+}
+.samll span:nth-of-type(6){
+	transform: rotateX(90deg) translateZ(60px);
+}
+
+.active .big{
+	float: left;
+	padding:10px;
+	margin:10px;
+	background: #fff;
+	text-align: center;
+	border-radius: 10%;
+	transition: 1s;
+	
+}
+.cube .none{
+	display: none;
+}
+/*------------------------------------------------*/
+#nav {
+	width: 80px;
+	height: 131px;
+	position: absolute;
+	z-index: 20;
+	left: -82px;
+	top: 30%;
+	border : 1px solid #000;
+	border-top: none;
+	border-bottom: none;
+	background: #f4f4f4;
+}
+#nav ul {
+	padding: 0;
+	margin: 0;
+}
+#nav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 30px;
+	border : 1px solid #000;
+	margin-bottom: 1px;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+}
+#nav a {
+	font: 15px/30px "Arial";
+	text-decoration: none;
+	color: #000;
+}
+#decoration  {
+	position: absolute;
+	left: 81px;
+	top: 27%;
+	border: 25px solid #ddd6c6;
+	border-top-color : #000;
+	border-right-color : #000;
+	border-bottom-color : #000;
+	background: #000;
+	z-index: 10;
+}
+.bgball{
+	width:150%;
+	height:150%;
+	background: #45b8ee;
+	opacity: 1;
+	border-radius: 50%;
+	position: absolute;
+	left:-430px;
+	top:-230px;
+	z-index: 601;
+
+}
+</style>
+
+</head>
+<body>
+<div id="nav">
+	<ul>
+		<li><a href="javascript:;">首页</a></li>
+		<li><a href="javascript:;">Section1</a></li>
+		<li><a href="javascript:;">Section2</a></li>
+		<li><a href="javascript:;">Section3</a></li>
+	</ul>
+	<div id="decoration"></div>
+</div>
+	<div class="wrap">
+		<div id="cube">
+			<div class="bigS">
+				<div class="big">
+					<img src="img/1.jpg"/>
+				</div>
+				<div class="big">
+					<img src="img/2.jpg"/>
+				</div>
+				<div class="big">
+					<img src="img/3.jpg"/>
+				</div>
+				<div class="big">
+					<img src="img/4.jpg"/>
+				</div>
+				<div class="big">
+					<img src="img/5.jpg"/>
+				</div>
+				<div class="big">
+					<img src="img/6.jpg"/>
+				</div>
+				<div class="samll">
+					<span>
+						<img src="img/7.jpg"/>
+					</span>
+					<span>
+						<img src="img/8.jpg"/>
+					</span>
+					<span>
+						<img src="img/9.jpg"/>
+					</span>
+					<span>
+						<img src="img/10.jpg"/>
+					</span>
+					<span>
+						<img src="img/11.jpg"/>
+					</span>
+					<span>
+						<img src="img/12.jpg"/>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="bgball"></div>
+<script src="F.js"></script>
+<script src="miaov.js"></script>
+<script>
+	var decoration = document.getElementById('decoration');
+var nav = document.getElementById('nav');
+var zlis = nav.getElementsByTagName('li');
+zlis[1].style.background = "#ae9c85";
+for(var i = 0; i < zlis.length; i++){
+	zlis[i].index = i;
+	zlis[i].onmouseover = function() {
+		if(this.index == 3) {
+			for(var i = 0; i < zlis.length; i++){
+				zlis[i].style.background = "";
+			}
+			zlis[3].style.background = "#ae9c85";
+		}else {
+			for(var i = 0; i < zlis.length; i++){
+				zlis[i].style.background = "";
+			}
+			zlis[3].style.background = "#ae9c85";
+			this.style.background = "#ddd6c6";
+		}
+	}
+}
+nav.onmouseover = function() {
+	mTween(nav,{left: 0},200,"linear");
+	nav.onmouseout = function() {
+		mTween(nav,{left: -82},200,"linear")
+	}
+}
+for(var i = 0; i < zlis.length; i++) {
+	zlis[i].index = i;
+	zlis[i].onclick = function() {
+		if(this.index == 0) {
+		  ballsf()
+          setTimeout(function(){
+          	window.open("index.html","_self");
+          },6000)
+			
+		}
+		if(this.index == 2) {
+			ballsf()
+          	setTimeout(function(){
+          		window.open("作品.html","_self");
+          	},6000)			
+		}
+		if(this.index == 1) {
+			ballsf()
+          	setTimeout(function(){
+          		window.open("图片特效.html","_self");
+          	},6000)			
+		}
+	}
+}
+function ballsf(){
+ 	var timesf1=0
+ 	var numsf1=1
+	var ball = document.querySelector(".bgball")
+ 	timesf1=setInterval(function(){
+ 		numsf1++
+ 		ball.style.width=10*numsf1+"px"
+ 		ball.style.height=10*numsf1+"px"	
+ 	},20)
+}
+var timesf2=0
+		var ball = document.querySelector(".bgball")
+		timesf2=setInterval(function(){		
+	 		ball.style.width=ball.offsetWidth-10+"px"
+	 		ball.style.height=ball.offsetHeight-5+"px"
+	 		if(ball.offsetWidth==0){
+	 			clearTimeout(timesf2)
+	 		} 
+ 		},20)
+</script>
+</body>
+</html>
