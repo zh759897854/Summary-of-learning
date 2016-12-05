@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+<style>
+#box {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000;
+	background: blue;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#box2 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000;
+	background: red;
+	position: absolute;
+	left: 300px;
+	top: 0;
+}
+</style>
+</head>
+<body>
+<div id="box"></div>
+<div id="box2"></div>
+<script type="text/javascript">
+function move(id) {
+	var _this = this;
+	this.box = document.getElementById(id);
+	this.box.addEventListener("mousedown",go);
+	function go(ev) {
+		_this.gogo(ev);
+	}
+}
+move.prototype.gogo = function(ev) {
+	var _this = this;
+	var e = ev;
+	this.disX = e.pageX - this.box.offsetLeft;
+	this.disY = e.pageY - this.box.offsetTop;
+	document.addEventListener("mousemove",run);
+	function run(ev) {
+		_this.runs(ev);
+	}
+	document.addEventListener("mouseup",stop);
+	function stop(ev) {
+		document.removeEventListener('mousemove',run)
+	}
+}
+move.prototype.runs = function(ev) {
+	var e = ev;
+	this.box.style.left = e.pageX - this.disX + "px";
+	this.box.style.top = e.pageY - this.disY + "px";
+}
+new move("box");
+new move2("box2");
+function move2(id) {
+	move.call(this,id)
+};
+for(var attr in move.prototype) {
+	if(move.prototype.hasOwnProperty(attr)) {
+		move2.prototype[attr] = move.prototype[attr];
+	}
+} 
+console.log(Array.toString)
+</script>
+</body>
+</html>

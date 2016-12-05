@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Document</title>
+<style>
+#content {
+	width: 300px;
+	height: 300px;
+	border: 1px solid #000;
+}
+#content div{
+	display: none;
+}
+.active {
+	background: red;
+}
+#content .show {
+	display: block;
+}
+</style>
+</head>
+<body>
+<div id="btns">
+	<input type="button" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+</div>
+<div id="content">
+	<div>111111</div>
+	<div>222222</div>
+	<div>333333</div>
+</div>
+<input type="button" value="stop" id="stop">
+<input type="button" value="run" id="run">
+<script>	
+function bt() {
+	this.div1 = document.getElementById('btns');
+	this.btns = this.div1.getElementsByTagName('input');
+	this.div2 = document.getElementById('content');
+	this.contents = this.div2.getElementsByTagName('div');
+	this.tab();
+	this.timer = null;
+	this.nub = 0;
+	this.autoplay();
+}
+bt.prototype.tab = function() {
+	var _this = this;
+	for(var i = 0; i <this.btns.length; i++) {
+		this.btns[i].index = i;
+		this.btns[i].onclick = function() {	
+			_this.change(_this,this.index);
+		}
+	}
+}
+bt.prototype.change = function(_this,a) {
+	for(var i = 0; i <_this.btns.length; i++) {
+		_this.btns[i].className = "";
+		_this.contents[i].className = "";
+	}
+	_this.btns[a].className = "active";
+	_this.contents[a].className = "show";
+}
+bt.prototype.autoplay = function() {
+	var _this = this;
+	clearInterval(this.timer);
+	this.timer = setInterval(function() {
+		_this.nub++;
+		if(_this.nub >= _this.btns.length){
+			_this.nub = 0;
+		}
+		_this.change(_this,_this.nub)
+	},800)
+}
+bt.prototype.stop = function() {
+	clearInterval(this.timer);
+	this.timer = null;
+	console.log(1)
+}
+bt.prototype.run = function() {
+	this.autoplay();
+}
+var a = new bt();
+var stop = document.getElementById('stop');
+var run = document.getElementById('run');
+stop.onclick = function() {
+	a.stop();
+}
+run.onclick = function() {
+	a.run();
+}
+</script>
+</body>
+</html>
